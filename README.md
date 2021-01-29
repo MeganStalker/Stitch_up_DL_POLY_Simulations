@@ -13,28 +13,28 @@ This script:
 * Line 91:
 
 ```
-#	cat HISTORY_$num >> ../HISTORY_tmp
-
+# cat HISTORY_$num >> ../HISTORY_tmp
 ```
 
 * Line 119:
 
 ```
-#mv $fold/HISTORY_tmp .
-
+# mv $fold/HISTORY_tmp .
 ```
 
 * Line 125:
 
 ```
-#cat save$numdir/HISTORY_$num >> HISTORY_tmp
-
+# cat save$numdir/HISTORY_$num >> HISTORY_tmp
 ```
+
 # If you cannot access screen resources to plot a graph using Gnuplot, please replace line 149 
 
-gnuplot --persist -e 'plot "timesteps"; pause mouse close; exit gnuplot'
+``` gnuplot --persist -e 'plot "timesteps"; pause mouse close; exit gnuplot'
+```
 
 # with line 153
-
-#gnuplot --persist -e 'set terminal 'dumb'; plot "timesteps"; pause mouse close; exit gnuplot'
+```
+gnuplot --persist -e 'set terminal 'dumb'; plot "timesteps"; pause mouse close; exit gnuplot'
+```
 
