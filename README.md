@@ -28,12 +28,14 @@ This script:
 # cat save$numdir/HISTORY_$num >> HISTORY_tmp
 ```
 
-# If you cannot access screen resources to plot a graph using Gnuplot, please replace line 149 
+* If you cannot access screen resources to plot a graph using Gnuplot, please replace line 149 
 
-``` gnuplot --persist -e 'plot "timesteps"; pause mouse close; exit gnuplot'
+```
+gnuplot --persist -e 'plot "timesteps"; pause mouse close; exit gnuplot'
 ```
 
-# with line 153
+* with line 153
+
 ```
 gnuplot --persist -e 'set terminal 'dumb'; plot "timesteps"; pause mouse close; exit gnuplot'
 ```
