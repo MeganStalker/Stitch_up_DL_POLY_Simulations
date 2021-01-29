@@ -7,8 +7,7 @@ This script:
 
 ## Notes:
 
-* Throughout this script, operations on HISTORY files are commented out as these operations are time and resource intensive. 
-* Please uncomment the relevant lines (91, 119, 125) to execute operations on HISTORY files 
+1. Throughout this script, operations on HISTORY files are commented out as these operations are time and resource intensive. Please uncomment the relevant lines (91, 119, 125) to execute operations on HISTORY files 
 
 * Line 91:
 
@@ -28,13 +27,15 @@ This script:
 # cat save$numdir/HISTORY_$num >> HISTORY_tmp
 ```
 
-* If you cannot access screen resources to plot a graph using Gnuplot, please replace line 149 
+2. If you cannot access screen resources to plot a graph using Gnuplot, please replace line 149 with line 153
+
+* Line 149:
 
 ```
 gnuplot --persist -e 'plot "timesteps"; pause mouse close; exit gnuplot'
 ```
 
-* with line 153
+* Line 153:
 
 ```
 gnuplot --persist -e 'set terminal 'dumb'; plot "timesteps"; pause mouse close; exit gnuplot'
