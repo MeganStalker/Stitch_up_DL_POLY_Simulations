@@ -1,4 +1,4 @@
-# stitch up
+# Stitch Up DL_POLY Simulations
 
 This script:
 
