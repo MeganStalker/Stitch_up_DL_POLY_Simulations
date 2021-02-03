@@ -72,7 +72,7 @@ pwd
 mv OUTPUT OUTPUT_$numdir
 mv SOLVAT SOLVAT_$numdir
 mv HISTORY HISTORY_$numdir
-
+mv STATIS STATIS_$numdir
 num=0
 batch=0
 
@@ -83,11 +83,13 @@ while [ $batch -lt $numdir ]; do
 	mv OUTPUT OUTPUT_$num 
 	mv SOLVAT SOLVAT_$num
 	mv HISTORY HISTORY_$num
+	mv STATIS STATIS_$num
 
 # Concatenates the separate relevant output files (OUTPUT, SOLVAT, HISTORY) into one single output file (OUTPUT_tmp, SOLVAT_tmp, HISTORY_tmp) in the parent directory
 
 	cat OUTPUT_$num >> ../OUTPUT_tmp
 	cat SOLVAT_$num >> ../SOLVAT_tmp	
+	cat STATIS_$num >> ../STATIS_tmp
 #	cat HISTORY_$num >> ../HISTORY_tmp
 
 # Extracts the single observable (timesteps from the HISTORY file) into a separate file (timesteps_$num)
@@ -116,13 +118,22 @@ done
 mv $fold/stitch_up.sh .
 mv $fold/OUTPUT_tmp .
 mv $fold/SOLVAT_tmp .
+mv $fold/STATIS_tmp .
+mv $fold/CONTROL* .
+mv $fold/CONFIG* .
+mv $fold/FIELD* .
 #mv $fold/HISTORY_tmp .
 
 # Concatenates the relevant output files (OUTPUT, SOLVAT, HISTORY) which were previously loose in the parent directory into the relevant output files (OUTPUT_tmp, SOLVAT_tmp, HISTORY_tmp) in the parent directory
 
 cat save$numdir/OUTPUT_$num >> OUTPUT_tmp
 cat save$numdir/SOLVAT_$num >> SOLVAT_tmp
+cat save$numdir/STATIS_$num >> STATIS_tmp
 #cat save$numdir/HISTORY_$num >> HISTORY_tmp
+
+mv OUTPUT_tmp OUTPUT
+mv SOLVAT_tmp SOLVAT
+mv STATIS_tmp STATIS
 
 #######################################################################################################################################################################################################################
 #                                                                                                                                                                                                                     #
